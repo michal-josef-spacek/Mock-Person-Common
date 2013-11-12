@@ -1,0 +1,110 @@
+NAME
+    Mock::Person::Common - Mock::Person common subroutines.
+
+SYNOPSIS
+     use Mock::Person::Common qw(first_male first_female last_male last_female
+             middle_male middle_female name);
+     my $first_male = first_male();
+     my $first_female = first_female();
+     my $last_male = last_male();
+     my $last_female = last_female();
+     my $middle_male = middle_male();
+     my $middle_female = middle_female();
+     my $name = name($sex);
+
+SUBROUTINES
+    first_male()
+            Returns random first name of male person.
+
+    first_female()
+            Returns random first name of female person.
+
+    last_male()
+            Returns random last name of male person.
+
+    last_female()
+            Returns random last name of female person.
+
+    middle_male()
+            Returns random middle name of male person.
+
+    middle_female()
+            Returns random middle name of female person.
+
+    name([$sex])
+            Recieves scalar with sex of the person ('male' or 'female') and
+            returns scalar with generated name. Default value of $sex
+            variable is 'male'.
+
+VARIABLES
+    *       @FIRST_MALE
+
+             Array with possible first male names.
+             Affect first_male() and name() subroutines.
+
+    *       @FIRST_FEMALE
+
+             Array with possible first female names.
+             Affect first_female() and name() subroutines.
+
+    *       @MIDDLE_MALE
+
+             Array with possible middle male names.
+             Affect middle_male() and name() subroutines.
+
+    *       @MIDDLE_FEMALE
+
+             Array with possible middle female names.
+             Affect middle_female() and name() subroutines.
+
+    *       @LAST_MALE
+
+             Array with possible last male names.
+             Affect last_male() and name() subroutines.
+
+    *       @LAST_FEMALE
+
+             Array with possible last female names.
+             Affect last_female() and name() subroutines.
+
+EXAMPLE
+     # Pragmas.
+     use strict;
+     use warnings;
+
+     # Modules.
+     use Encode qw(decode_utf8 encode_utf8);
+     use Mock::Person::Common qw(name);
+
+     # Data.
+     @Mock::Person::Common::FIRST_MALE = (decode_utf8('Štefan'));
+     @Mock::Person::Common::MIDDLE_MALE = (decode_utf8('Lukáš'));
+     @Mock::Person::Common::LAST_MALE = (decode_utf8('Šimek'));
+
+     # Error.
+     print encode_utf8(name())."\n";
+
+     # Output:
+     # Štefan Lukáš Šimek
+
+DEPENDENCIES
+    Exporter, Readonly.
+
+SEE ALSO
+    Mock::Person, Mock::Person::DE, Mock::Person::EN, Mock::Person::SK,
+    Mock::Person::SK::ROM, Mock::Person::SV, Mock::Person::RU.
+
+REPOSITORY
+    <https://github.com/tupinek/Mock-Person-Common>
+
+AUTHOR
+    Michal Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+LICENSE AND COPYRIGHT
+    BSD license.
+
+VERSION
+    0.01
+
