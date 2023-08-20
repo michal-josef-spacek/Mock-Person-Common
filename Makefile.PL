@@ -5,7 +5,7 @@ use inc::Module::Install;
 
 # Definition.
 abstract 'Mock::Person common subroutines.';
-author 'Michal Špaček <skim@cpan.org>';
+author 'Michal Josef Spacek <skim@cpan.org>';
 license 'bsd';
 name 'Mock-Person-Common';
 readme_from 'Common.pm';
