@@ -1,19 +1,15 @@
 package Mock::Person::Common;
 
-# Pragmas.
 use base qw(Exporter);
 use strict;
 use warnings;
 
-# Modules.
 use Readonly;
 
-# Constants.
 Readonly::Array our @EXPORT_OK => qw(first_male first_female middle_female
 	last_male last_female middle_male middle_female name);
 Readonly::Scalar our $SPACE => q{ };
 
-# Version.
 our $VERSION = 0.01;
 
 # Data variables.
@@ -162,11 +158,9 @@ Default value of $sex variable is 'male'.
 
 =head1 EXAMPLE
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Encode qw(decode_utf8 encode_utf8);
  use Mock::Person::Common qw(name);
 

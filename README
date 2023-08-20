@@ -68,11 +68,9 @@ VARIABLES
              Affect last_female() and name() subroutines.
 
 EXAMPLE
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Encode qw(decode_utf8 encode_utf8);
      use Mock::Person::Common qw(name);
 
