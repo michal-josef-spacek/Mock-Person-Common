@@ -26,6 +26,7 @@ no_index:
     - examples
     - inc
     - t
+    - xt
 requires:
   Exporter: 0
   Readonly: 0
